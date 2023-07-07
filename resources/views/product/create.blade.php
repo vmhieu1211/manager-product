@@ -47,17 +47,21 @@
         </div>
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Money:</strong>
-                <input type="text" name="Name" class="form-control" placeholder="Money">
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
                 <strong>Purchase Date:</strong>
                 <input type="date" id="purchase_date" name="purchase_date" required class="form-control"
                     placeholder="Purchase Date" value="">
             </div>
         </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <strong>Delivery Date:</strong>
+                <input type="date" id="delivery_date" name="delivery_date" required class="form-control"
+                    placeholder="Delivery Date" value="">
+            </div>
+        </div>
+        
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>

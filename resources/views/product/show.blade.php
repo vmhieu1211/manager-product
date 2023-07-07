@@ -21,15 +21,33 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $product->detail }}
+                <strong>Amount:</strong>
+                {{ $product->amount }}
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Product Image:</strong>
-                <img alt="" style="max-width: 700px; margin-bottom: 10px;">
+                <strong>Money:</strong>
+                {{ $product->money }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Purchase Date:</strong>
+                {{ $product->purchase_date }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Delivery Date:</strong>
+                {{ $product->delivery_date }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Person delivery:</strong>
+                {{ $product->person_delivery_id }}
             </div>
         </div>
     </div>
