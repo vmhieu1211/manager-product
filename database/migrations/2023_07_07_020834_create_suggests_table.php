@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_types', function (Blueprint $table) {
+        Schema::create('suggests', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('product_type_name');
-            $table->float('depreciation_rate');
+            $table->integer('products_id');
+            $table->foreign('products_id')->references('products')->on('id');
+            $table->enum('suggest_type', ['buy', 'sell']);
+            $table->dateTime('suggest_date');
+            $table->enum('state', ['chua_duyet', 'da_duyet', 'da_thuc_hien']);
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_types');
+        Schema::dropIfExists('suggests');
     }
 };

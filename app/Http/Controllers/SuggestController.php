@@ -10,7 +10,7 @@ class SuggestController extends Controller
     public function index()
     {
         $suggests = Suggest::all();
-        return view('suggest.index', compact('suggests'))->with('i', (request()->input('page', 1) - 1) * 5);;
+        return view('suggest.index', compact('suggests'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
@@ -21,24 +21,22 @@ class SuggestController extends Controller
     public function store(Request $request)
     {
         // Validate input data
-        $validatedData = $request->validate([
+        $validated = $request->validate([
             'product_id' => 'required',
             'suggest_type' => 'required',
             'suggest_date' => 'required',
-            'person_suggest_id' => 'required',
             'state' => 'required', 
         ]);
 
         // Create a new suggest
-        $suggest = Suggest::create($validatedData);
+        $suggest = Suggest::create($validated);
     
         // Redirect to suggest index page
         return redirect()->route('suggest.index')->with('success', 'Suggest created successfully.');
     }
 
-    public function show($id)
+    public function show(Suggest $suggest)
     {
-        $suggest = Suggest::findOrFail($id);
         return view('suggest.show', compact('suggest'));
     }
 

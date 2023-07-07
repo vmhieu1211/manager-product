@@ -9,7 +9,7 @@
             </div>
 
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('suggest.create') }}"> Create New Suggest</a>
+                <a class="btn btn-success" href="{{ route('product.create') }}"> Create New Suggest</a>
                 <a class="btn btn-success" href=""> Logout</a>
             </div>
         </div>
@@ -23,21 +23,24 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Suggest Date</th>
-            <th>People Suggest</th>
-            <th>State</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Money</th>
+            <th>Purchase Date</th>
+            <th>Delevery Date</th>
+            <th>Person Delivery</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($suggests as $suggests)
+        @foreach ($products as $product)
             <tr>
-                <td>{{ ++$i }}</td>
-                <td>{{ $suggests->product->product_name }}</td>
-                <td>{{ $suggests->suggest_type }}</td>
-                <td>{{ $suggests->suggest_date }}</td>
-                <td>{{ $suggests->person_suggest_id }}</td>
-                <td>{{ $suggests->state }}</td>
+                <td>{{ $product->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->amount }}</td>
+                <td>{{ $product->money }}</td>
+                <td>{{ $product->purchase_date }}</td>
+                <td>{{ $product->delivery_date }}</td>
+                <td>{{ $product->person_delivery_id }}</td>
+
                 <td>
                     <form action="" method="POST">
                         <a class="btn btn-info" href="">Show</a>

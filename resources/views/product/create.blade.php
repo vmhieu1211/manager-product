@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Suggest</h2>
+                <h2>Add New Product</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('suggest.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -29,18 +29,33 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Product:</strong>
-                <input type="text" name="Product" class="form-control" placeholder="Product">
+                <strong>Name:</strong>
+                <input type="text" name="Name" class="form-control" placeholder="Name">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Amount:</strong>
+                <input type="text" name="Amount" class="form-control" placeholder="Amount">
             </div>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-12">
             <div class="form-group">
-                <strong>Type:</strong>
-                {{-- <select name="product_type_id" class="form-control">
-                        @foreach ($productTypes as $productType)
-                            <option value="{{ $productType->id }}">{{ $productType->product_type_name }}</option>
-                        @endforeach
-                    </select> --}}
+                <strong>Money:</strong>
+                <input type="text" name="Name" class="form-control" placeholder="Money">
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <strong>Money:</strong>
+                <input type="text" name="Name" class="form-control" placeholder="Money">
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-12">
+            <div class="form-group">
+                <strong>Purchase Date:</strong>
+                <input type="date" id="purchase_date" name="purchase_date" required class="form-control"
+                    placeholder="Purchase Date" value="">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

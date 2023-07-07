@@ -33,7 +33,7 @@
         @foreach ($suggests as $suggests)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $suggests->product->product_name }}</td>
+                <td>{{ $suggests->product_id}}</td>
                 <td>{{ $suggests->suggest_type }}</td>
                 <td>{{ $suggests->suggest_date }}</td>
                 <td>{{ $suggests->person_suggest_id }}</td>
