@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\ProductType;
 use App\Models\Suggest;
 use Illuminate\Http\Request;
 
@@ -26,12 +26,12 @@ class SuggestController extends Controller
             'suggest_type' => 'required',
             'suggest_date' => 'required',
             'person_suggest_id' => 'required',
-            'state' => 'required',
+            'state' => 'required', 
         ]);
 
         // Create a new suggest
         $suggest = Suggest::create($validatedData);
-
+    
         // Redirect to suggest index page
         return redirect()->route('suggest.index')->with('success', 'Suggest created successfully.');
     }

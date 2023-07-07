@@ -1,4 +1,4 @@
-@extends('suggest.layout')
+@extends('product.layout')
 
 @section('content')
     @csrf
