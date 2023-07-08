@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Manager Product</h2>
+                <h2>Manager Suggest</h2>
             </div>
 
             <div class="pull-right">
@@ -24,26 +24,26 @@
         <tr>
             <th>No</th>
             <th>Product</th>
+            <th>Amount</th>
+            <th>Money</th>
             <th>Type</th>
             <th>Suggest Date</th>
-            <th>People Suggest</th>
-            <th>State</th>
+            <th>Status</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($suggests as $suggests)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $suggests->product_id}}</td>
+                <td>{{ $suggests->products_name }}</td>
+                <td>{{ $suggests->amount }}</td>
+                <td>{{ $suggests->money }}</td>
                 <td>{{ $suggests->suggest_type }}</td>
                 <td>{{ $suggests->suggest_date }}</td>
-                <td>{{ $suggests->person_suggest_id }}</td>
-                <td>{{ $suggests->state }}</td>
+                <td>{{ $suggests->status }}</td>
                 <td>
-                    <form action="" method="POST">
-                        <a class="btn btn-info" href="">Show</a>
-                        {{-- @can('product-edit') --}}
-                        <a class="btn btn-primary" href="">Edit</a>
-                        {{-- @endcan --}}
+                    <form action="{{ route('suggest.destroy', $suggests->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('suggest.show', $suggests->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('suggest.edit', $suggests->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

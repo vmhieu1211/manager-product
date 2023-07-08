@@ -21,17 +21,23 @@ class SuggestController extends Controller
     public function store(Request $request)
     {
         // Validate input data
-        $validated = $request->validate([
-            'product_id' => 'required',
+          $request->validate([
+            'products_name' => 'required',
+            'amount'=>'required',
+            'money'=>'required',
             'suggest_type' => 'required',
             'suggest_date' => 'required',
-            'state' => 'required', 
+            'status' => 'required', 
         ]);
-
-        // Create a new suggest
-        $suggest = Suggest::create($validated);
-    
-        // Redirect to suggest index page
+        $suggest = new Suggest();
+        $suggest->products_name =$request->products_name;
+        $suggest->amount =$request->amount;
+        $suggest->money =$request->money;
+        $suggest->suggest_type =$request->suggest_type;
+        $suggest->suggest_date =$request->suggest_date;
+        $suggest->status =$request->status;
+        $suggest->save();    
+ 
         return redirect()->route('suggest.index')->with('success', 'Suggest created successfully.');
     }
 
@@ -40,34 +46,36 @@ class SuggestController extends Controller
         return view('suggest.show', compact('suggest'));
     }
 
-    public function edit($id)
+    public function edit(Suggest $suggest)
     {
-        $suggest = Suggest::findOrFail($id);
         return view('suggest.edit', compact('suggest'));
     }
 
     public function update(Request $request, $id)
-    {
-        $validatedData = $request->validate([
-            'product_id' => 'required',
+    {  $request->validate([
+            'products_name' => 'required',
+            'amount'=>'required',
+            'money'=>'required',
             'suggest_type' => 'required',
             'suggest_date' => 'required',
-            'person_suggest_id' => 'required',
-            'state' => 'required',
+            'status' => 'required', 
         ]);
 
-        $suggest = Suggest::findOrFail($id);
-        $suggest->update($validatedData);
+        $suggest = new Suggest(); 
+        $suggest->products_name = $request->products_name; 
+        $suggest->amount = $request->amount; 
+        $suggest->money = $request->money; 
+        $suggest->suggest_type = $request->suggest_type; 
+        $suggest->suggest_date = $request->suggest_date; 
+        $suggest->status = $request->status; 
+        $suggest->save();
 
         return redirect()->route('suggest.index')->with('success', 'Suggest updated successfully.');
     }
 
-    public function destroy($id)
+    public function destroy(Suggest $suggest)
     {
-        $suggest = Suggest::findOrFail($id);
-
         $suggest->delete();
-
-        return redirect()->route('suggest.index')->with('success', 'Suggest deleted successfully.');
+        return redirect()->route('suggest.index')->with('success', 'Product deleted success');
     }
 }

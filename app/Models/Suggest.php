@@ -10,11 +10,12 @@ class Suggest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'product_id',
+        'products_name',
+        'amount',
+        'money',
         'suggest_type',
         'suggest_date',
-        'person_suggest_id',
-        'state'
+        'satus'
     ];
 
 
@@ -23,8 +24,4 @@ class Suggest extends Model
         return $this->belongsTo(Product::class,'product_id');
     }
 
-    public function PersonSuggest()
-    {
-        return $this->belongsTo(User::class,'person_suggest_id');
-    }
 }

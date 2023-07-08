@@ -7,7 +7,7 @@
                 <h2>Add New Product</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('product.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -23,48 +23,60 @@
         </div>
     @endif
 
-    {{-- <form action="{{ route('suggests.store') }}" method="POST" enctype="multipart/form-data"> --}}
-    @csrf
+    <form action="{{ route('products.store') }}" method="POST">
+        @csrf
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                <input type="text" name="Name" class="form-control" placeholder="Name">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Name:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Amount:</strong>
+                    <input type="text" name="amount" class="form-control" placeholder="Amount" required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Money:</strong>
+                    <input type="text" name="money" class="form-control" placeholder="Money" required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Status:</strong>
+                    <select name="status" class="form-control" required>
+                        <option value="using">Using</option>
+                        <option value="storage">Storage</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>Purchase Date:</strong>
+                    <input type="date" name="purchase_date" class="form-control" placeholder="Purchase Date" required>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>Delivery Date:</strong>
+                    <input type="date" name="delivery_date" class="form-control" placeholder="Delivery Date" required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Person Delivery ID:</strong>
+                    <input type="text" name="person_delivery_id" class="form-control" placeholder="Person Delivery ID"
+                        required>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Amount:</strong>
-                <input type="text" name="Amount" class="form-control" placeholder="Amount">
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Money:</strong>
-                <input type="text" name="Name" class="form-control" placeholder="Money">
-            </div>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Purchase Date:</strong>
-                <input type="date" id="purchase_date" name="purchase_date" required class="form-control"
-                    placeholder="Purchase Date" value="">
-            </div>
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Delivery Date:</strong>
-                <input type="date" id="delivery_date" name="delivery_date" required class="form-control"
-                    placeholder="Delivery Date" value="">
-            </div>
-        </div>
-        
-
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
     </form>
+
 @endsection

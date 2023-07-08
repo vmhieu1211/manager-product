@@ -23,29 +23,61 @@
         </div>
     @endif
 
-    {{-- <form action="{{ route('suggests.store') }}" method="POST" enctype="multipart/form-data"> --}}
-    @csrf
+    <form action="{{ route('suggest.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Product:</strong>
-                <input type="text" name="Product" class="form-control" placeholder="Product">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Product:</strong>
+                    <input type="text" name="products_name" class="form-control" placeholder="Product">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Amount:</strong>
+                    <input type="text" name="amount" class="form-control" placeholder="Amount">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Money:</strong>
+                    <input type="text" name="money" class="form-control" placeholder="Money">
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Type:</strong>
+                    <select name="suggest_type" class="form-control" required>
+                        <option value="buy">Mua</option>
+                        <option value="sell">Bán</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>Suggest Date:</strong>
+                    <input type="date" name="suggest_date" class="form-control" placeholder="Suggest Date" required>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Status:</strong>
+                    <select name="status" class="form-control" required>
+                        <option value="not_approved">Not aprroved</option>
+                        <option value="approved">Approved</option>
+                        <option value="done">Done</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-        <div class="col-xs-6 col-sm-6 col-md-12">
-            <div class="form-group">
-                <strong>Type:</strong>
-                {{-- <select name="product_type_id" class="form-control">
-                        @foreach ($productTypes as $productType)
-                            <option value="{{ $productType->id }}">{{ $productType->product_type_name }}</option>
-                        @endforeach
-                    </select> --}}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
     </form>
 @endsection

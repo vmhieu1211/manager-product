@@ -9,7 +9,7 @@
             </div>
 
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('product.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
                 <a class="btn btn-success" href=""> Logout</a>
             </div>
         </div>
@@ -26,6 +26,7 @@
             <th>Name</th>
             <th>Amount</th>
             <th>Money</th>
+            <th>Status</th>
             <th>Purchase Date</th>
             <th>Delevery Date</th>
             <th>Person Delivery</th>
@@ -37,16 +38,15 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->amount }}</td>
                 <td>{{ $product->money }}</td>
+                <td>{{ $product->status }}</td>
                 <td>{{ $product->purchase_date }}</td>
                 <td>{{ $product->delivery_date }}</td>
                 <td>{{ $product->person_delivery_id }}</td>
 
                 <td>
-                    <form action="" method="POST">
-                        <a class="btn btn-info" href="">Show</a>
-                        {{-- @can('product-edit') --}}
-                        <a class="btn btn-primary" href="">Edit</a>
-                        {{-- @endcan --}}
+                    <form action="{{ route('products.destroy', $product->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('products.show', $product->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('products.edit', $product->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

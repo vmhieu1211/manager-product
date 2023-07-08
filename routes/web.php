@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('suggest', SuggestController::class);
-Route::resource('product', ProductController::class);
+Route::resource('products', ProductController::class);

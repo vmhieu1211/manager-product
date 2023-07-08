@@ -20,16 +20,26 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'name' => 'required',
             'amount' => 'required',
             'money' => 'required',
+            'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
             'person_delivery_id' => 'required'
         ]);
-        $product = Product::create($validated);
-        return redirect()->route('product.index')->with('success', 'Product created success');
+        $product = new Product();
+        $product->name = $request->name;
+        $product->amount = $request->amount;
+        $product->money = $request->money;
+        $product->status = $request->status;
+        $product->purchase_date = $request->purchase_date;
+        $product->delivery_date = $request->delivery_date;
+        $product->person_delivery_id = $request->person_delivery_id;
+        $product->save();
+
+        return redirect()->route('suggest.index')->with('success', 'Suggest created success');
     }
 
     public function show(Product $product)
@@ -42,23 +52,31 @@ class ProductController extends Controller
         return view('product.edit', compact('product'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        $validate = $request->validate([
+        $request->validate([
             'name' => 'required',
             'amount' => 'required',
+            'money' => 'required',
+            'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
             'person_delivery_id' => 'required'
         ]);
-        $product = Product::finOrFail($id);
-        $product->update($validate);
-        return redirect()->route('product.index')->with('success', 'Product updated success');
+        $product->name = $request->name;
+        $product->amount = $request->amount;
+        $product->money = $request->money;
+        $product->status = $request->status;
+        $product->purchase_date = $request->purchase_date;
+        $product->delivery_date = $request->delivery_date;
+        $product->person_delivery_id = $request->person_delivery_id;
+        $product->save();
+        return redirect()->route('products.index')->with('success', 'Product updated success');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index')->with('success', 'Product deleted success');
+        return redirect()->route('products.index')->with('success', 'Product deleted success');
     }
 }
