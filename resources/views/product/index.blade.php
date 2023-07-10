@@ -30,6 +30,8 @@
             <th>Purchase Date</th>
             <th>Delevery Date</th>
             <th>Person Delivery</th>
+            <th>Depreciation rate</th>
+            <th>Depreciation Amount</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($products as $product)
@@ -41,7 +43,9 @@
                 <td>{{ $product->status }}</td>
                 <td>{{ $product->purchase_date }}</td>
                 <td>{{ $product->delivery_date }}</td>
-                <td>{{ $product->person_delivery_id }}</td>
+                <td>{{ $product->personDelivery->name }}</td>
+                <td>{{ $product->depreciation_rate }}</td>
+                <td>{{ ($product->money * $product->depreciation_rate) / 100 }}</td>
 
                 <td>
                     <form action="{{ route('products.destroy', $product->id) }}" method="POST">

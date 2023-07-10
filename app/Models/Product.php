@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\User;
 use App\Models\Suggest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $filable =[
+    protected $filable = [
         'product_name',
         'amount',
         'money',
@@ -19,17 +20,17 @@ class Product extends Model
         'person_delivery_id'
     ];
 
-    public function PersonDelivery()
+    public function personDelivery()
     {
-        return $this->belongsTo(User::class,'person_delivery_id');
+        return $this->belongsTo(User::class, 'person_delivery_id');
     }
 
     public function suggest()
     {
-        return $this->hasMany(Suggest::class,'product_id');
+        return $this->hasMany(Suggest::class, 'product_id');
     }
 
-    
+
     // public function tinhTienKhauHao()
     // {
     //     $ = 1;

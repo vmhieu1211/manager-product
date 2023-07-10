@@ -27,7 +27,8 @@ class ProductController extends Controller
             'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
-            'person_delivery_id' => 'required'
+            'person_delivery_id' => 'required',
+            'depreciation_rate' => 'required'
         ]);
         $product = new Product();
         $product->name = $request->name;
@@ -37,9 +38,10 @@ class ProductController extends Controller
         $product->purchase_date = $request->purchase_date;
         $product->delivery_date = $request->delivery_date;
         $product->person_delivery_id = $request->person_delivery_id;
+        $product->depreciation_rate = $request->depreciation_rate;
         $product->save();
 
-        return redirect()->route('suggest.index')->with('success', 'Suggest created success');
+        return redirect()->route('products.index')->with('success', 'Suggest created success');
     }
 
     public function show(Product $product)
@@ -61,7 +63,8 @@ class ProductController extends Controller
             'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
-            'person_delivery_id' => 'required'
+            'person_delivery_id' => 'required',
+            'depreciation_rate' => 'required'
         ]);
         $product->name = $request->name;
         $product->amount = $request->amount;
@@ -70,6 +73,7 @@ class ProductController extends Controller
         $product->purchase_date = $request->purchase_date;
         $product->delivery_date = $request->delivery_date;
         $product->person_delivery_id = $request->person_delivery_id;
+        $product->depreciation_rate = $request->depreciation_rate;
         $product->save();
         return redirect()->route('products.index')->with('success', 'Product updated success');
     }

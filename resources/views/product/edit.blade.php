@@ -60,8 +60,7 @@
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Purchase Date:</strong>
-                    <input type="date" name="purchase_date" class="form-control"
-                        placeholder="Purchase Date"  required>
+                    <input type="date" name="purchase_date" class="form-control" placeholder="Purchase Date" required>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-12">
@@ -78,7 +77,13 @@
                         required>
                 </div>
             </div>
-
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Depreciation rate:</strong>
+                    <input type="text" name="depreciation_rate" class="form-control" placeholder="Depreciation rate"
+                        required>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
