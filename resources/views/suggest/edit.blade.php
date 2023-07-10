@@ -6,7 +6,7 @@
                 <h2>Edit Suggest</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('suggests.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         </div>
     @endif
 
-    <form action="{{ route('suggest.update', $suggest->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('suggests.update', $suggest->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

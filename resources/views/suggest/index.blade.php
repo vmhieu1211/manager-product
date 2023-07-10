@@ -9,7 +9,7 @@
             </div>
 
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('suggest.create') }}"> Create New Suggest</a>
+                <a class="btn btn-success" href="{{ route('suggests.create') }}"> Create New Suggest</a>
                 <a class="btn btn-success" href=""> Logout</a>
             </div>
         </div>
@@ -41,9 +41,9 @@
                 <td>{{ $suggests->suggest_date }}</td>
                 <td>{{ $suggests->status }}</td>
                 <td>
-                    <form action="{{ route('suggest.destroy', $suggests->id) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('suggest.show', $suggests->id) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('suggest.edit', $suggests->id) }}">Edit</a>
+                    <form action="{{ route('suggests.destroy', $suggests->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('suggests.show', $suggests->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('suggests.edit', $suggests->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

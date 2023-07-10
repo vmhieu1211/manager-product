@@ -7,7 +7,7 @@
                 <h2>Add New Suggest</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('suggest.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('suggests.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('suggest.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('suggests.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="row">
