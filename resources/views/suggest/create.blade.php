@@ -33,12 +33,14 @@
                     <input type="text" name="products_name" class="form-control" placeholder="Product">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Amount:</strong>
                     <input type="text" name="amount" class="form-control" placeholder="Amount">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Money:</strong>
@@ -46,13 +48,34 @@
                 </div>
             </div>
 
-
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Type:</strong>
                     <select name="suggest_type" class="form-control" required>
-                        <option value="buy">Mua</option>
-                        <option value="sell">Bán</option>
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Asset Type:</strong>
+                    <select name="asset_type" class="form-control" required>
+                        <option value="Computer">Máy tính</option>
+                        <option value="Hardware     devices">Thiết bị phần cứng</option>
+                        <option value="Work table">Bàn làm việc</option>
+                        <option value="Swivel chair">Ghế</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Department Suggest:</strong>
+                    <select name="department_suggest" class="form-control" required>
+                        <option value="Dev Team">Dev Team</option>
+                        <option value="Marketing">Marketing</option>
                     </select>
                 </div>
             </div>
@@ -72,6 +95,14 @@
                         <option value="approved">Approved</option>
                         <option value="done">Done</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>Person Suggest:</strong>
+                    <input type="text" name="person_suggest_id" class="form-control" placeholder="Person Suggest"
+                        required>
                 </div>
             </div>
 

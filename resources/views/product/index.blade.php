@@ -26,6 +26,7 @@
             <th>Name</th>
             <th>Amount</th>
             <th>Money</th>
+            <th>Department</th>
             <th>Status</th>
             <th>Purchase Date</th>
             <th>Delevery Date</th>
@@ -40,6 +41,7 @@
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->amount }}</td>
                 <td>{{ $product->money }}</td>
+                <td>{{ $product->department }}</td>
                 <td>{{ $product->status }}</td>
                 <td>{{ $product->purchase_date }}</td>
                 <td>{{ $product->delivery_date }}</td>

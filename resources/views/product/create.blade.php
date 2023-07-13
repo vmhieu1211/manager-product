@@ -33,18 +33,31 @@
                     <input type="text" name="name" class="form-control" placeholder="Name" required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Amount:</strong>
                     <input type="text" name="amount" class="form-control" placeholder="Amount" required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Money:</strong>
                     <input type="text" name="money" class="form-control" placeholder="Money" required>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Department:</strong>
+                    <select name="department" class="form-control" required>
+                        <option value="Dev Team">Dev Team</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status:</strong>
@@ -54,18 +67,21 @@
                     </select>
                 </div>
             </div>
+
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Purchase Date:</strong>
                     <input type="date" name="purchase_date" class="form-control" placeholder="Purchase Date" required>
                 </div>
             </div>
+
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Delivery Date:</strong>
                     <input type="date" name="delivery_date" class="form-control" placeholder="Delivery Date" required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Person Delivery ID:</strong>
@@ -73,6 +89,7 @@
                         required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Depreciation rate:</strong>
@@ -80,6 +97,7 @@
                         required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

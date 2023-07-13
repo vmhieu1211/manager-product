@@ -24,6 +24,7 @@ class ProductController extends Controller
             'name' => 'required',
             'amount' => 'required',
             'money' => 'required',
+            'department' => 'required',
             'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
@@ -34,6 +35,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->amount = $request->amount;
         $product->money = $request->money;
+        $product->department = $request->department;
         $product->status = $request->status;
         $product->purchase_date = $request->purchase_date;
         $product->delivery_date = $request->delivery_date;
@@ -60,6 +62,7 @@ class ProductController extends Controller
             'name' => 'required',
             'amount' => 'required',
             'money' => 'required',
+            'department' => 'required',
             'status' => 'required',
             'purchase_date' => 'required',
             'delivery_date' => 'required',
@@ -69,6 +72,7 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->amount = $request->amount;
         $product->money = $request->money;
+        $product->department = $request->department;
         $product->status = $request->status;
         $product->purchase_date = $request->purchase_date;
         $product->delivery_date = $request->delivery_date;

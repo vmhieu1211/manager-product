@@ -17,7 +17,8 @@ class Product extends Model
         'status',
         'purchase_date',
         'delivery_date',
-        'person_delivery_id'
+        'person_delivery_id',
+        'department'
     ];
 
     public function personDelivery()

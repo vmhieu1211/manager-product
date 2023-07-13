@@ -14,14 +14,21 @@ class Suggest extends Model
         'amount',
         'money',
         'suggest_type',
+        'asset_type',
+        'person_suggest_id',
         'suggest_date',
-        'satus'
+        'status',
+        'deparment_suggest'
     ];
 
 
-    public function Product()
+    public function product()
     {
         return $this->belongsTo(Product::class,'products_name');
     }
 
+    public function personSuggest()
+    {
+        return $this->belongsTo(User::class,'person_suggest_id');
+    }
 }

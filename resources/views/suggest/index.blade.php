@@ -27,6 +27,9 @@
             <th>Amount</th>
             <th>Money</th>
             <th>Type</th>
+            <th>Asset Type</th>
+            <th>Person Suggest</th>
+            <th>Department  Suggest</th>
             <th>Suggest Date</th>
             <th>Status</th>
             <th width="280px">Action</th>
@@ -38,6 +41,9 @@
                 <td>{{ $suggests->amount }}</td>
                 <td>{{ $suggests->money }}</td>
                 <td>{{ $suggests->suggest_type }}</td>
+                <td>{{ $suggests->asset_type }}</td>
+                <td>{{ $suggests->personSuggest->name }}</td>
+                <td>{{$suggests->department_suggest}}</td>
                 <td>{{ $suggests->suggest_date }}</td>
                 <td>{{ $suggests->status }}</td>
                 <td>

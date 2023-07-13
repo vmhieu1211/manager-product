@@ -34,6 +34,7 @@
                         placeholder="Name">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Amount:</strong>
@@ -41,6 +42,7 @@
                         placeholder="Amount">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Money:</strong>
@@ -48,6 +50,17 @@
                         placeholder="Money">
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Department:</strong>
+                    <select name="department" class="form-control" required>
+                        <option value="Dev Team">Dev Team</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status:</strong>
@@ -57,12 +70,14 @@
                     </select>
                 </div>
             </div>
+
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Purchase Date:</strong>
                     <input type="date" name="purchase_date" class="form-control" placeholder="Purchase Date" required>
                 </div>
             </div>
+
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Delivery Date:</strong>
@@ -77,6 +92,7 @@
                         required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Depreciation rate:</strong>
@@ -84,6 +100,7 @@
                         required>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

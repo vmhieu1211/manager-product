@@ -32,22 +32,39 @@
                 {{ $product->money }}
             </div>
         </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Department:</strong>
+                {{ $product->department }}
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Purchase Date:</strong>
                 {{ $product->purchase_date }}
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Delivery Date:</strong>
                 {{ $product->delivery_date }}
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Person delivery:</strong>
                 {{ $product->person_delivery_id }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Depreciation Rate:</strong>
+                {{ $product->depreciation_rate }}
             </div>
         </div>
     </div>

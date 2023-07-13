@@ -48,6 +48,7 @@
                         placeholder="Money">
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Type:</strong>
@@ -57,10 +58,41 @@
                     </select>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Asset Type:</strong>
+                    <select name="asset_type" class="form-control" required>
+                        <option value="Computer">Máy tính</option>
+                        <option value="Hardware devices">Thiết bị</option>
+                        <option value="Work table">Bàn làm việc</option>
+                        <option value="Swivel chair">Ghế</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Department Suggest:</strong>
+                    <select name="department_suggest" class="form-control" required>
+                        <option value="Dev Team">Dev Team</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>Suggest Date:</strong>
                     <input type="date" name="suggest_date" class="form-control" placeholder="Suggest Date" required>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>Person Suggest:</strong>
+                    <input type="text" name="person_suggest_id" class="form-control" placeholder="Person Suggest"
+                        required>
                 </div>
             </div>
 
